@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql
+    container_name: ndjdb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: secret2309
+      MYSQL_DATABASE: companydb
+      MYSQL_USER: ndj
+      MYSQL_PASSWORD: ndjsecret23
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db/:/docker-entrypoint-initdb.d/
